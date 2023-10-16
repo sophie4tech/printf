@@ -5,6 +5,11 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+struct function_ch
+{
+	char specifier;
+	int(*fun)(valist);
+}
 
 
 #endif /* MAIN_H */
