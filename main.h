@@ -5,11 +5,24 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-struct function_ch
+/**
+  * struct fun_print - typedef for struct
+  * @specix: the character
+  * @fptr: the function pointer
+  */
+
+typedef struct function_print
 {
-	char specifier;
-	int(*fun)(valist);
-}
+	char specix;
+
+	int(*fptr)(va_list);
+} f_prn;
+
+int _printf(const char *format, ...);
+int _pustr(va_list);
+int _putchar(va_list);
+int (*call_fn(char test))(va_list);
+
 
 
 #endif /* MAIN_H */
