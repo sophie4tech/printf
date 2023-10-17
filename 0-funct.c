@@ -6,7 +6,8 @@
   */
 int _putchar(va_list pf_arg)
 {
-	char ch = va_arg(pf_arg, int);
+	char ch;
+	ch = va_arg(pf_arg, int);
 
 	return (write(1, &ch, 1));
 }

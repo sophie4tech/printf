@@ -9,7 +9,7 @@ int (*call_fn(char test))(va_list)
 {
 	int ctr = 0;
 
-	f_prn f_arr[] = {
+	f_prn fun_arr[] = {
 		{'c', _putchar},
 		{'s', _pustr},
 		{'d', _putchar},
@@ -17,10 +17,10 @@ int (*call_fn(char test))(va_list)
 		{'\0', NULL}
 	};
 
-	while (f_arr[ctr].specix != '\0')
+	while (fun_arr[ctr].specix != '\0')
 	{
-		if (test == f_arr[ctr].specix)
-			return (f_arr[ctr].fptr);
+		if (test == fun_arr[ctr].specix)
+			return (fun_arr[ctr].fptr);
 		ctr++;
 	}
 	return (NULL);
