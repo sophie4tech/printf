@@ -8,9 +8,8 @@
 
 int _printf(const char *format, ...)
 {
-	int ctr = 0;
-	char c;
-	char *str;
+	int ctr = 0, sz = 0;
+	char test;
 
 	va_list pf_arg;
 
@@ -20,47 +19,23 @@ int _printf(const char *format, ...)
 	{
 		return (1);
 	}
-	while (*format)
+	for (ctr = 0; format[ctr] != '\0'; ctr++)
 	{
-		if (*format != '%')
+		if (format[ctr] == '%')
 		{
-			write(1, format, 1);
 			ctr++;
+			test = format[ctr];
+			if(test =='c' || test == 's' || test == 'd' || test == 'i')
+			{
+				sz += (call_fn(test))(pf_arg);
+			}
 		}
 		else
 		{
-			format++;
-			if (*format == '%')
-			{
-				write(1, format, 1);
-				ctr++;
-			}
-			else if(*format == 'c')
-			{
-				c = va_arg(pf_arg, int);
-				write(1, &c, 1);
-				ctr++;
-			}
-			else if(*format == 's')
-			{
-				char *str = va_arg(pf_arg, char*);
-				int str_len = strlen(str);
-				write(1, str, str_len);
-				ctr += str_len;
-			}
-			else if(*format == 'r')
-			{
-				write(1, "%r", 1);
-				ctr+=2;
-			}
-			else if(*format == 'd')
-			{
-				char d = va_arg(pf_arg, int);
-				write(1, &d, 1);
-			}
+			write(1, &format[ctr], 1);
+			sz++;
 		}
-		format++;
 	}
 	va_end(pf_arg);
-		
+	return(sz);
 }

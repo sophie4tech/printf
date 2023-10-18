@@ -12,17 +12,17 @@
   * @fptr: the function pointer
   */
 
-//typedef struct function_print
-//{
-//	char specix;
+typedef struct function_print
+{
+	char specix;
 
-//	int(*fptr)(va_list);
-//} f_prn;
+	int(*fptr)(va_list);
+} f_prn;
 
 int _printf(const char *format, ...);
-//int _pustr(va_list);
-//int _putchar(va_list);
-//int (*call_fn(char test))(va_list);
+int _pustr(va_list);
+int _putchar(va_list);
+int (*call_fn(char test))(va_list);
 
 
 
