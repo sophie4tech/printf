@@ -25,9 +25,16 @@ int _printf(const char *format, ...)
 		{
 			ctr++;
 			test = format[ctr];
-			if(test =='c' || test == 's' || test == 'd' || test == 'i')
+			if (test == 'c' || test == 's' || test == 'd' || test == 'i')
 			{
 				sz += (call_fn(test))(pf_arg);
+			}
+			else
+			{
+			/*handling unsupported format specifier*/
+				write(1, &format[ctr - 1], 1); /* write the '%' character*/
+				write(1, &format[ctr], 1); /*write the character following '%'*/
+				sz += 2; /* increae d size by 2 since 2, charactters are written*/
 			}
 		}
 		else
@@ -37,5 +44,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(pf_arg);
-	return(sz);
+	return (sz);
 }
