@@ -24,8 +24,6 @@ int _pustr(va_list);
 int _putchar(va_list);
 int _int(va_list);
 int (*call_fn(char test))(va_list);
-int print_remainder(const char *format);
-typedef int (*string_printer)(const char*);
 
 
 #endif /* MAIN_H */
