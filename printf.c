@@ -19,7 +19,6 @@ int _printf(const char *format, ...)
 	};
 
 	if (format == NULL)
-<<<<<<< HEAD
 		return (-1);
 
 	va_start(args, format);
@@ -29,35 +28,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 
 	return (charChecked);
-=======
-	{
-		return (1);
-	}
-	for (ctr = 0; format[ctr] != '\0'; ctr++)
-	{
-		if (format[ctr] == '%')
-		{
-			ctr++;
-			test = format[ctr];
-			if (test == 'c' || test == 's' || test == 'd' || test == 'i')
-			{
-				sz += (call_fn(test))(pf_arg);
-			}
-			else
-			{
-			/*handling unsupported format specifier*/
-				write(1, &format[ctr - 1], 1); /* write the '%' character*/
-				write(1, &format[ctr], 1); /*write the character following '%'*/
-				sz += 2; /* increae d size by 2 since 2, charactters are written*/
-			}
-		}
-		else
-		{
-			write(1, &format[ctr], 1);
-			sz++;
-		}
-	}
-	va_end(pf_arg);
-	return (sz);
->>>>>>> 19c052ab580039516155011be7545f1fdcafea8c
 }

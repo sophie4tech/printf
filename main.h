@@ -12,7 +12,7 @@
 
 /* Structures*/
 /**
-  * struct fun_print - typedef for struct
+  * struct function_print - typedef for struct
   * @specix: the character
   * @fptr: the function pointer
   */
@@ -20,8 +20,7 @@
 typedef struct function_print
 {
 	char specix;
-
-	int(*fptr)(va_list args);
+	int (*fptr)(va_list args);
 } f_prn;
 
 /** Functions*/
