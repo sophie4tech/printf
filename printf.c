@@ -1,4 +1,6 @@
 #include "main.h"
+#include "print_binary.h"
+
 
 /**
   * _printf - funtion that print to std out
@@ -28,7 +30,7 @@ int _printf(const char *format, ...)
 			if (test == 'c' || test == 's' || test == 'd' || test == 'i')
 			{
 				sz += (call_fn(test))(pf_arg);
-			}
+			}		}
 			else
 			{
 			/*handling unsupported format specifier*/

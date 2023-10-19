@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
+#include "print_binary.h"
 
 /**
   * struct function_print - typedef for struct
