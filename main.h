@@ -7,12 +7,9 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
-<<<<<<< HEAD
-#include "print_binary.h"
-=======
+
 #include <limits.h>
 #include <stddef.h>
->>>>>>> 9d0311613782c781e2caf3c279ec78dc1a1f97e7
 
 /* Structures*/
 /**
